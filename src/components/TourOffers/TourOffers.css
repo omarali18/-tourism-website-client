@@ -1,0 +1,17 @@
+.offer-contaimer .top{
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+.offer-container-text{
+    margin-bottom: 30px;
+    color: rgb(63, 63, 243);
+}
+.offer-contaimer .btm{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 6rem;
+}
+@media screen {
+    
+}

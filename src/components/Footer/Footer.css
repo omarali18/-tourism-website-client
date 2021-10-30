@@ -1,0 +1,68 @@
+.footer-container{
+    background-color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+.footer-container h3{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.contact-btn{
+    border: none;
+    border-radius: 10px;
+    padding:15px;
+    color: #7592EE;
+    font-size: 18px;
+}
+.footer-deatel{
+    width: 60%;
+    margin: 0 auto;
+    
+}
+.ancor-link{
+    text-decoration: none;
+    color: white;
+}
+.ancor-link:hover{
+    color: gray;
+}
+.visitor-information{
+    text-decoration: none;
+}
+
+.job-offers:hover{
+    background-color: #7592EE;
+    color: white;
+}
+.visits{
+    text-decoration: none;
+    color: gray;
+    letter-spacing: 1px;
+}
+.font-color{
+    color: yellow;
+}
+.ancor:hover{
+    color: white;
+}
+.display{
+    text-decoration: none;
+    color: white;
+}
+.social-media i{
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.Copyright{
+    text-align: center;
+    background-color: rgb(156, 154, 154);
+    color: rgb(8, 8, 8);
+    padding: 20px;
+}
+@media only screen and (max-width:540px) {
+    .footer-deatel, .footer-qsn{
+        width:90% ;
+    }
+}

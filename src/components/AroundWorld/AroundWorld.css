@@ -1,0 +1,22 @@
+.around-container{
+    width: 80%;
+    margin: 0 auto;
+    margin-top:7rem;
+    margin-bottom:7rem;
+}
+.around-text{
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 15px;
+}
+@media only screen and (max-width:768px) {
+    .around-container{
+        width: 98%;
+    }
+    .around-text{
+        padding-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        padding-left: 0px;
+    }
+}

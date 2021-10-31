@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../Hooks/useAuth';
 import SingleOffer from '../SingleOffer/SingleOffer';
 import "./TourOffers.css"
 

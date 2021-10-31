@@ -5,39 +5,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to left , rgba(83, 106, 151, 0.555), rgba(22, 37, 124, 0.712)), url("https://static01.nyt.com/images/2017/02/16/well/doctors-hospital-design/doctors-hospital-design-superJumbo.jpg");
+    background: linear-gradient(to left , rgba(47, 55, 71, 0.52), rgba(12, 20, 70, 0.561)), url("https://www.planetware.com/wpimages/2020/08/top-attractions-in-the-world-china-great-wall.jpg");
     background-size: cover;
     width: 100%;
     height: 900px;
 }
 .login-container .form-container{
     width: 400px;
-    background-color: rgba(49, 49, 219, 0.342);
+    background-color: rgba(209, 209, 250, 0.342);
     border-radius: 10px;
     text-align: center;
     padding: 30px 0;
     
 }
-.login-container div form .input-field{
-    border: none;
-    border-bottom: 1px solid #fff;
-    border-radius: none;
-    background:transparent;
-    outline: none;
-    height: 35px;
-    color: white;
-    font-size: 15px;
-    margin-top: 10px;
-}
-.login-container div form input[type=submit]{
-    /* width: ; */
-}
-.checkbox-lebel{
-    padding-left: 0px;
-}
-.login-register{
-    background: linear-gradient(to left,#FF5DE1,#FF00C6);
-}
+
 .btn-bg-color{
     background: linear-gradient(to left,#33A852,#F9BB08);
 }

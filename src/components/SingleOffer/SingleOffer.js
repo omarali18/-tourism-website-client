@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './SingleOffer.css'
 
 const SingleOffer = (props) => {
-    const { img, name, description, price, offer } = props.offer
+    const { img, name, description, price, offer, _id } = props.offer
     return (
         <div className="col ">
             <div className="card single-card">
@@ -16,7 +16,8 @@ const SingleOffer = (props) => {
                     </div>
                     <p className="card-text">{description}</p>
                     <div className="text-center mt-5">
-                        <Link to="/bookingnow"><button className="btn btn-success">Booking Now</button></Link>
+                        {/* <Link to="/bookingnow">Booking Now</Link> */}
+                        <Link to={`/bookingnow/${_id}`}><button className="btn btn-success">Booking Now</button></Link>
                     </div>
                 </div>
             </div>

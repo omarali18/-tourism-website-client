@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../Hooks/useFirebase';
 // import useAuth from '../../Hooks/useAuth';
 import "./MenueBar.css"
 
 const MenueBar = () => {
     const [isMobile, setIsMobile] = useState(false)
-    // const { user, handleLogOut } = useAuth()
+    const { user, handleSignOut } = useFirebase()
     return (
         <nav className="navbar">
             <ul className={isMobile ? "nav-links-mobile" : "nav-link-container"}
@@ -26,19 +27,19 @@ const MenueBar = () => {
                 {/* <Link to="/bookingNow" className="about">
                     <li>Booking Now</li>
                 </Link> */}
-                {/* {
-                    !user.email ? <Link to="/login" className="sign-up">
+                {
+                    !user?.email ? <Link to="/login" className="sign-up">
                         <li>Sing In</li>
-                    </Link> : <Link to="/home" onClick={handleLogOut} className="sign-up">
+                    </Link> : <Link to="/home" onClick={handleSignOut} className="sign-up">
                         <li>Sing Out</li>
                     </Link>
-                } */}
+                }
 
             </ul>
 
-            {/* {
-                user.email ? <h3 className="logo"><i className="fas fa-user"></i> {user.displayName} </h3> : <h3 className="logo">WELCOME</h3>
-            } */}
+            {
+                user?.email ? <h3 className="logo"><i className="fas fa-user"></i> {user?.displayName} </h3> : <h3 className="logo">WELCOME</h3>
+            }
 
             <button className="mobile-menu-icon"
                 onClick={() => setIsMobile(!isMobile)}

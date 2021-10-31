@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../Hooks/useAuth';
 import "./BookingNow.css"
+import axios from 'axios';
 
 const BookingNow = () => {
     const [offer, setOffer] = useState({})
@@ -10,7 +11,20 @@ const BookingNow = () => {
     const { user } = useAuth()
     const { img, name, description, price, _id } = offer;
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        data.offerName = name;
+        data.offerId = _id;
+
+        axios.post("http://localhost:5000/client", data)
+            .then(res => {
+                // const dataAccept = (res.data);
+                if (res?.data.acknowledged) {
+                    alert("Successfully booking this offer")
+                    reset()
+                    setOffer({})
+                }
+            }).catch(error => console.log(error))
+    }
 
     useEffect(() => {
         fetch(`http://localhost:5000/tourOffer/${id}`)
@@ -19,7 +33,7 @@ const BookingNow = () => {
     }, [])
     return (
         <div className="mt-5 mb-5">
-            <div className="row row-cols-md-2 row-cols-1 w-75 mx-auto">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 w-75 mx-auto">
                 <div className="col">
                     <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
 

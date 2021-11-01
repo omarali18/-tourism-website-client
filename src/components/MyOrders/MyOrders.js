@@ -11,7 +11,7 @@ const MyOrders = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/allclient/${user.displayName}`)
+        axios.get(`https://fathomless-bastion-34681.herokuapp.com/allclient/${user.displayName}`)
             .then(res => {
                 const clients = (res.data);
                 setMyAllOrder(clients);

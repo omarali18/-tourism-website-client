@@ -7,7 +7,7 @@ const ManageSingleOrders = (props) => {
     const deleteMySingleOrder = (id) => {
         const responce = window.confirm('Are you sure you want to delete id?')
         if (responce) {
-            axios.delete(`http://localhost:5000/clientorder/${id}`)
+            axios.delete(`https://fathomless-bastion-34681.herokuapp.com/clientorder/${id}`)
                 .then(res => {
                     const deleteConform = (res?.data.deletedCount);
                     if (deleteConform) {

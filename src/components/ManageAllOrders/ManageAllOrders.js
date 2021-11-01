@@ -5,7 +5,7 @@ import ManageSingleOrders from '../ManageSingleOrders/ManageSingleOrders';
 const ManageAllOrders = () => {
     const [allOrder, setAllOrder] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/ManageAllOrders")
+        axios.get("https://fathomless-bastion-34681.herokuapp.com/ManageAllOrders")
             .then(res => {
                 setAllOrder(res.data);
             })

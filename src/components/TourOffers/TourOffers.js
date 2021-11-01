@@ -8,7 +8,7 @@ const TourOffers = () => {
     const [offers, setOffers] = useState([])
     const { isLoading } = useAuth()
     useEffect(() => {
-        fetch("http://localhost:5000/tourOffer")
+        fetch("https://fathomless-bastion-34681.herokuapp.com/tourOffer")
             .then(res => res.json())
             .then(data => setOffers(data))
     }, [])

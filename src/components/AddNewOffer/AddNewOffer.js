@@ -7,7 +7,7 @@ const AddNewOffer = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post("http://localhost:5000/newOffer", data)
+        axios.post("https://fathomless-bastion-34681.herokuapp.com/newOffer", data)
             .then(res => {
                 console.log(res.data);
                 if (res?.data.acknowledged) {

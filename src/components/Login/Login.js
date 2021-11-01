@@ -12,21 +12,11 @@ const Login = () => {
     // const { state } = location;
 
     const redirect_url = location.state?.from || "/home"
-    let { from } = location.state || { from: { pathname: "/" } };
 
 
     const googleRedirectLogin = () => {
         signInByGoogle(history, redirect_url)
-        // .then(result => {
-        // history.push(redirect_url)
-        // window.location.reload(history.push(redirect_url));
-        // history.replace(from)
 
-        // })
-
-        // .catch(error => {
-        //     console.log(error.message);
-        // })
     }
 
     return (

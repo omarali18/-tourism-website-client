@@ -18,7 +18,7 @@ const BookingNow = () => {
         data.OfferPrice = price;
         data.offerImg = img;
 
-        axios.post("http://localhost:5000/client", data)
+        axios.post("https://fathomless-bastion-34681.herokuapp.com/client", data)
             .then(res => {
                 // const dataAccept = (res.data);
                 if (res?.data.acknowledged) {
@@ -31,7 +31,7 @@ const BookingNow = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tourOffer/${id}`)
+        fetch(`https://fathomless-bastion-34681.herokuapp.com/tourOffer/${id}`)
             .then(res => res.json())
             .then(data => setOffer(data))
     }, [])

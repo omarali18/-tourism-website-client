@@ -9,6 +9,9 @@ import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthProvider from './context/AuthProvider';
+import MyOrders from './components/MyOrders/MyOrders';
+import ManageAllOrders from './components/ManageAllOrders/ManageAllOrders';
+import AddNewOffer from './components/AddNewOffer/AddNewOffer';
 
 
 function App() {
@@ -28,9 +31,24 @@ function App() {
               <Login />
               <Footer />
             </Route>
+            <PrivateRoute path="/AddNewOffer">
+              <MenueBar />
+              <AddNewOffer />
+              <Footer />
+            </PrivateRoute>
+            <PrivateRoute path="/ManageAllOrders">
+              <MenueBar />
+              <ManageAllOrders></ManageAllOrders>
+              <Footer />
+            </PrivateRoute>
             <PrivateRoute path="/bookingnow/:id">
               <MenueBar />
               <BookingNow></BookingNow>
+              <Footer />
+            </PrivateRoute>
+            <PrivateRoute path="/myorder">
+              <MenueBar />
+              <MyOrders />
               <Footer />
             </PrivateRoute>
             <Route path="*">

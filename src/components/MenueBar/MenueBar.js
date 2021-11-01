@@ -15,18 +15,15 @@ const MenueBar = () => {
                 <Link to="/home" className="home">
                     <li>Home</li>
                 </Link>
-                {/* <Link to="/doctors" className="doctors">
-                    <li>Doctors</li>
-                </Link> */}
-                {/* <Link to="/pharmacy" className="pharmacys">
-                    <li>Pharmacy</li>
-                </Link> */}
-                {/* <Link to="/about" className="about">
-                    <li>About us</li>
-                </Link> */}
-                {/* <Link to="/bookingNow" className="about">
-                    <li>Booking Now</li>
-                </Link> */}
+                <Link to="/myorder" className="about">
+                    <li>My Order</li>
+                </Link>
+                <Link to="/ManageAllOrders" className="about">
+                    <li>Manage All Orders</li>
+                </Link>
+                <Link to="/AddNewOffer" className="pharmacys">
+                    <li>Add A New Offer</li>
+                </Link>
                 {
                     !user?.email ? <Link to="/login" className="sign-up">
                         <li>Sing In</li>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import SingleOffer from '../SingleOffer/SingleOffer';
 import "./TourOffers.css"
 
 const TourOffers = () => {
     const [offers, setOffers] = useState([])
+    const { isLoading } = useAuth()
     useEffect(() => {
         fetch("http://localhost:5000/tourOffer")
             .then(res => res.json())
@@ -15,6 +17,11 @@ const TourOffers = () => {
             <hr className="top" />
             <div className="text-center offer-container-text">
                 <h1 >NOW CHOOSE YOUR PLAN</h1>
+            </div>
+            <div className="text-center">
+                {
+                    isLoading ? <Spinner animation="border" variant="primary" /> : ""
+                }
             </div>
             <div className="row row-cols-1 row-cols-md-3 g-4 ">
                 {

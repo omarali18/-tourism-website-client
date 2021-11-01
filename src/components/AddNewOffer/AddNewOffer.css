@@ -1,0 +1,16 @@
+
+.offer-add-form input, textarea{
+
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 350px;
+}
+.offer-add-form{
+
+    margin: 30px 100px;
+    
+}

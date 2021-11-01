@@ -5,6 +5,7 @@ import slider1 from '../../images/slider/slider1.png';
 import slider2 from '../../images/slider/slider2.png';
 import slider4 from '../../images/slider/slider4.png';
 import slider5 from '../../images/slider/slider5.png';
+import MenueBar from '../MenueBar/MenueBar';
 
 const Banner = () => {
     return (

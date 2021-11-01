@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import "./Login.css"
 import useAuth from '../../Hooks/useAuth';
@@ -12,18 +12,21 @@ const Login = () => {
     // const { state } = location;
 
     const redirect_url = location.state?.from || "/home"
-    // const redirect_url = user.email ? state.from.pathname : "/home"
+    let { from } = location.state || { from: { pathname: "/" } };
 
 
     const googleRedirectLogin = () => {
-        signInByGoogle()
-            .then(result => {
-                history.push(redirect_url)
-                // window.location = state.from.pathname;
-            })
-            .catch(error => {
-                console.log(error.message);
-            })
+        signInByGoogle(history, redirect_url)
+        // .then(result => {
+        // history.push(redirect_url)
+        // window.location.reload(history.push(redirect_url));
+        // history.replace(from)
+
+        // })
+
+        // .catch(error => {
+        //     console.log(error.message);
+        // })
     }
 
     return (

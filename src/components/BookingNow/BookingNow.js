@@ -7,6 +7,7 @@ import axios from 'axios';
 
 const BookingNow = () => {
     const [offer, setOffer] = useState({})
+    const [place, setPlace] = useState(false)
     const { id } = useParams()
     const { user } = useAuth()
     const { img, name, description, price, _id } = offer;
@@ -14,14 +15,17 @@ const BookingNow = () => {
     const onSubmit = data => {
         data.offerName = name;
         data.offerId = _id;
+        data.OfferPrice = price;
+        data.offerImg = img;
 
         axios.post("http://localhost:5000/client", data)
             .then(res => {
                 // const dataAccept = (res.data);
                 if (res?.data.acknowledged) {
                     alert("Successfully booking this offer")
+                    setPlace(true)
                     reset()
-                    setOffer({})
+                    // setOffer({})
                 }
             }).catch(error => console.log(error))
     }
@@ -32,7 +36,8 @@ const BookingNow = () => {
             .then(data => setOffer(data))
     }, [])
     return (
-        <div className="mt-5 mb-5">
+        <div className="mt-5 mb-5 text-center">
+            <h1 className="m-5">Place your Order</h1>
             <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 w-75 mx-auto">
                 <div className="col">
                     <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
@@ -49,10 +54,10 @@ const BookingNow = () => {
 
 
 
-                        <input type="submit" />
+                        <input type="submit" value="Place Order" />
                     </form>
                 </div>
-                <div className="col">
+                <div className={place ? "d-none" : "col d-block"}>
                     <div className="row row-cols-1 row-cols-md-3 g-4">
                         <div className="col w-75 mx-auto">
                             <div className="card card-height">
